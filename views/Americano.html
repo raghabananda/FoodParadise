@@ -1,0 +1,28 @@
+
+<div class="container">
+	<br/>
+	<div class="row">
+		<div class="col-md-4" ng-repeat="imgs in Thalis|filter:'American'">
+			<img class="rounded-circle" ng-src="{{imgs.ImagePath}}" alt="{{imgs.name}}" height="236px" width="304px">
+			<br/><br/>
+			
+			<div class="card-body">
+				<h4 class="text-center">{{imgs.name}}</h4>
+				<h6 class="text-center">Rs.{{imgs.Price}}</h6>
+				<div class="text-center">
+				<button class="btn btn-primary btn-block"
+						ng-click="add(imgs)"
+						ng-show="imgs.Qty==0">Add</button>
+				</div>
+				<diV class="text-center" ng-hide="imgs.Qty==0">
+					<button class="btn btn-primary"
+							ng-click="add(imgs)">+</button>
+					<label>{{imgs.Qty}}</label>
+					<button class="btn btn-primary"
+							ng-click="remove(imgs)">-</button>
+				</diV>
+			</div>						
+			<br/>
+		</div>
+	</div>
+</div>

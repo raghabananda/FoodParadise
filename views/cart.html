@@ -1,0 +1,36 @@
+<div class="container">
+  
+	<div class="card">
+		<div class="card-header">			
+			<h2 class="text-center" ng-show="cartItems>0">Your Cart</h2>
+			<h2 class="text-center" ng-show="cartItems==0">Cart is empty</h2>
+			<h2 class="text-center" ng-show="TotalPrice>0">(Rs.{{TotalPrice}}/-)</h2>
+		</div>
+		<br/>
+		<div class="body">										
+			<div class="row">
+		<div class="col-md-4" ng-repeat="imgs in cart">
+			<img class="rounded-circle" ng-src="{{imgs.ImagePath}}" alt="{{imgs.name}}" height="236px" width="304px">
+			<br/><br/>
+			
+			<div class="card-body">
+				<h4 class="text-center">{{imgs.name}}</h4>
+				<h6 class="text-center">Rs.{{imgs.Price*imgs.Qty}}</h6>				
+				<diV class="text-center">
+					<button class="btn btn-primary"
+							ng-click="addcart(imgs)">+</button>
+					<label>{{imgs.Qty}}</label>
+					<button class="btn btn-primary"
+							ng-click="removecart(imgs,$index)">-</button>
+				</diV>
+			</div>						
+			<br/>
+		</div>
+	</div>
+		</div>	
+		<div class="card-footer text-center" ng-show="TotalPrice>0">
+			<button ng-click="PlaceOrder()" class="btn btn-primary">Place Order</button>
+			
+		</div>
+	</div>
+</div>

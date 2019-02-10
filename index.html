@@ -1,0 +1,53 @@
+<html ng-app="app">
+<head>		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+<script src="Jsfiles/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-cookies.js"></script>
+
+<script src="Jsfiles/controllers.js"></script>
+	
+
+</head>
+	<body ng-controller="myctrl">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<div class="container">
+				<a href="#" class="navbar-brand">
+					<img class="rounded-circle" height="30px" width="40px"
+						 ng-src="https://travel.home.sndimg.com/content/dam/images/travel/fullset/2014/07/18/22/food-paradise-103-ep.rend.hgtvcom.336.189.suffix/1491584381904.jpeg">
+					FOOD PARADISE</a>
+				
+			<ul class="navbar-nav">				
+				<li class="nav-item">
+					
+					<a class="nav-link" href="#!cart">
+					<img class="rounded-circle" src="Images/download.png" 
+							 alt="Cart" height="30px" width="30px">
+						<label>({{cartItems}}) {{cartItems>1?'Items' : 'Item'}}</label></a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#!royalmangalorean">Mangalorean</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#!Odissa">Odiya</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#!Americano">Americano</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#!CustomerData">{{User}}</a>
+				</li>
+			</ul>
+			</div>			
+		</nav>
+		
+		<div ng-view></div>	
+		
+	</body>
+</html>
